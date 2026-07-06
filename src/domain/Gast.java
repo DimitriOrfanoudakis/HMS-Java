@@ -44,7 +44,7 @@ public class Gast {
 		this.zimmer = zimmer;
 	}
 	
-	// Konstruktor
+	// Konstruktor mit bekanntem Zimmer
 	
 	public Gast(String vorname, String nachname, Zimmer zimmer) {
 		this.id = 0;
@@ -52,4 +52,21 @@ public class Gast {
 		this.nachname = nachname;
 		this.zimmer = zimmer;
 	}
+	
+	// Konstruktor ohne Zimmer
+	
+	public Gast(String vorname, String nachname) {
+		this.id = 0;
+		this.vorname = vorname;
+		this.nachname = nachname;
+		this.zimmer = null;
+	}
+	
+	@Override
+	public String toString() {
+		return "ID: " + this.id + "\n" +
+			   "Vorname: " + this.vorname + "\n" +
+			   "Nachname: " + this.nachname + "\n" +
+			   "Zimmer: " + this.zimmer;
+		}
 }

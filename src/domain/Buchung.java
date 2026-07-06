@@ -149,4 +149,16 @@ public class Buchung {
 		this.checkOutDatum = checkOutDatum;
 		this.status = Status.AUSSTEHEND;		
 	}
+	
+	@Override
+	public String toString() {
+		return "ID: " + this.id + "\n" +
+			   "Zimmernummer: " + this.zimmer + "\n" +
+			   "Gast: " + this.gast + "\n" +
+			   "Zimmertyp: " + this.zimmerTyp + "\n" +
+			   "Summe(€): " + this.summe + "\n" +
+			   "Datum Checkin: " + this.checkInDatum + "\n" +
+			   "Datum Checkout:  " + this.checkOutDatum + "\n" +
+			   "Status:  " + this.status;
+		}
 }

@@ -53,4 +53,12 @@ public class Zimmertyp {
 		this.preisProNacht = preisProNacht;
 		this.bezeichnung = bezeichnung;
 	}
+	
+	@Override
+	public String toString() {
+		return "ID: " + this.id + "\n" +
+			   "Anzahl Betten: " + this.betten + "\n" +
+			   "Preis Pro Nacht(€): " + this.preisProNacht + "\n" +
+			   "Bezeichnung: " + this.bezeichnung;
+		}
 }
