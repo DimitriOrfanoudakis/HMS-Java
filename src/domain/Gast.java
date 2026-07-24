@@ -4,7 +4,10 @@ public class Gast {
 	private int id;
 	private String vorname;
 	private String nachname;
-	private Zimmer zimmer;
+	private String wohnort;
+	private String email;
+	private String telNummer;
+	
 	
 	// Getters & Setters
 	
@@ -35,38 +38,66 @@ public class Gast {
 		this.nachname = nachname;
 	}
 	
-	// zimmer
-	public Zimmer getZimmer() {
-		return this.zimmer;
+	// wohnort
+	
+	public String getWohnort() {
+		return this.wohnort;
 	}
 	
-	public void SetZimmer(Zimmer zimmer) {
-		this.zimmer = zimmer;
+	public void setWohnort(String wohnort) {
+		this.wohnort = wohnort;
 	}
 	
-	// Konstruktor mit bekanntem Zimmer
+	// email
 	
-	public Gast(String vorname, String nachname, Zimmer zimmer) {
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	// telNummer
+	
+	public String getTelNummer() {
+		return this.telNummer;
+	}
+	
+	public void setTelNummer(String telNummer) {
+		this.telNummer = telNummer;
+	}
+	
+	
+	// Konstruktor ohne ID
+	
+	public Gast(String vorname, String nachname, String wohnort, String email, String telNummer) {
 		this.id = 0;
 		this.vorname = vorname;
 		this.nachname = nachname;
-		this.zimmer = zimmer;
+		this.wohnort = wohnort;
+		this.email = email;
+		this.telNummer = telNummer;
 	}
 	
-	// Konstruktor ohne Zimmer
+	// Konstruktor mit ID
 	
-	public Gast(String vorname, String nachname) {
-		this.id = 0;
-		this.vorname = vorname;
-		this.nachname = nachname;
-		this.zimmer = null;
-	}
+		public Gast(int id, String vorname, String nachname, String wohnort, String email, String telNummer) {
+			this.id = id;
+			this.vorname = vorname;
+			this.nachname = nachname;
+			this.wohnort = wohnort;
+			this.email = email;
+			this.telNummer = telNummer;
+		}
 	
 	@Override
 	public String toString() {
 		return "ID: " + this.id + "\n" +
 			   "Vorname: " + this.vorname + "\n" +
 			   "Nachname: " + this.nachname + "\n" +
-			   "Zimmer: " + this.zimmer;
+			   "Wohnort: " + this.wohnort + "\n" +
+			   "Email: " + this.email + "\n" +
+			   "Telefonnummer: " + this.telNummer + "\n";
 		}
 }

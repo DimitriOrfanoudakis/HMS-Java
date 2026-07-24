@@ -7,9 +7,8 @@ public class Zimmer {
 	private Zimmertyp typ;
 	private int pax;
 	private boolean belegt;
-	private enum Status{
-		BELEGT,
-		FREI,
+	public enum Status{
+		FERTIG,
 		REINIGEN
 	};
 	private Status status;
@@ -73,15 +72,27 @@ public class Zimmer {
 		this.status = status;
 	}
 	
+	// Konstruktor mit ID
+	public Zimmer(int id, String nummer, Gast gast, Zimmertyp typ, int pax, boolean belegt, Status status) {
+		this.id = id;
+		this.nummer = nummer;
+		this.gast = gast;
+		this.typ = typ;
+		this.pax = pax;
+		this.belegt = belegt;
+		setStatus(status);
+	}
+		
 	// Konstruktor wenn Gast bekannt ist
-	public Zimmer(String nummer, Gast gast, Zimmertyp typ, int pax, boolean belegt) {
+	public Zimmer(String nummer, Gast gast, Zimmertyp typ, int pax, boolean belegt, Status status) {
 		this.id = 0;
 		this.nummer = nummer;
 		this.gast = gast;
 		this.typ = typ;
 		this.pax = pax;
 		this.belegt = belegt;
-		this.status = Status.BELEGT;
+		setStatus(status);
+		
 	}
 	
 	// Konstruktor ohne Gast
@@ -91,8 +102,7 @@ public class Zimmer {
 			this.gast = null;
 			this.typ = typ;
 			this.pax = pax;
-			this.belegt = belegt;
-			this.status = Status.FREI;
+			this.belegt = belegt;			
 	}
 	@Override
 	public String toString() {

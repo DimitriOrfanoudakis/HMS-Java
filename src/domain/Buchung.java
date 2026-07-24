@@ -13,7 +13,7 @@ public class Buchung {
 	private Map<String, Double> extras;
 	private LocalDate checkInDatum;
 	private LocalDate checkOutDatum;
-	private enum Status {
+	public enum Status {
 		AUSSTEHEND,
 		BESTÄTIGT,
 		EINGECHECKT,
@@ -149,6 +149,20 @@ public class Buchung {
 		this.checkOutDatum = checkOutDatum;
 		this.status = Status.AUSSTEHEND;		
 	}
+	
+	// Konstruktor um ALLE Werte zu setzen
+	
+		public Buchung(int id, Gast gast, Zimmer zimmer, String zimmerTyp, Double summe, LocalDate checkInDatum, LocalDate checkOutDatum, HashMap<String, Double> extras, Status status) {
+			this.id = id;
+			this.gast = gast; 
+			this.zimmer = zimmer; 
+			this.zimmerTyp = zimmerTyp;
+			this.summe = summe;
+			this.extras = extras;
+			this.checkInDatum = checkInDatum;
+			this.checkOutDatum = checkOutDatum;
+			this.status = status;		
+		}
 	
 	@Override
 	public String toString() {

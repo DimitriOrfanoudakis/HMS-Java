@@ -45,7 +45,7 @@ public class Zimmertyp {
 	}
 	
 	
-	// Konstruktor
+	// Konstruktor ohne ID
 	
 	public Zimmertyp(int betten, Double preisProNacht, String bezeichnung) {
 		this.id = 0;
@@ -53,6 +53,16 @@ public class Zimmertyp {
 		this.preisProNacht = preisProNacht;
 		this.bezeichnung = bezeichnung;
 	}
+	
+	
+	// Konstruktor mit ID
+	
+		public Zimmertyp(int id, int betten, Double preisProNacht, String bezeichnung) {
+			this.id = id;
+			this.betten = betten;
+			this.preisProNacht = preisProNacht;
+			this.bezeichnung = bezeichnung;
+		}
 	
 	@Override
 	public String toString() {
